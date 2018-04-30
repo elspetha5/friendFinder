@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+        crossorigin="anonymous">
+    <style>
+        .container {
+            margin-top: 40px;
+            margin-bottom: 70px;
+        }
+
+        h3 {
+            font-weight: bold;
+        }
+
+        .userSelect {
+            margin: 5px 0 20px;
+            width: 15%;
+        }
+
+        #submit {
+            margin: 20px 0;
+        }
+
+        iframe {
+            margin-left: 1%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>
+            <strong>Survey Questions</strong>
+        </h2>
+        <hr>
+        <h3>About You</h3>
+
+        <h4>Name (Required)</h4>
+        <input type="text" id="name" class="form-control" required>
+        <h4>Link to Photo Image (Required)</h4>
+        <input type="text" id="photo" class="form-control" required>
+        <hr>
+
+        <h3>Question 1</h3>
+        <h4>I have Andy Dwyer's sense of positivity.</h4>
+        <iframe src="https://giphy.com/embed/NJ82ps4sBhGxi" width="150" height="150" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <select id="q1" class="form-control userSelect">
+            <option value></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <h3>Question 2</h3>
+        <h4>I could rival Chandler Bing's comedic timing.</h4>
+        <iframe src="https://giphy.com/embed/vNITrslTkxf8Y" width="150" height="115" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <select id="q2" class="form-control userSelect">
+            <option value></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <h3>Question 3</h3>
+        <h4>My thirst for knowledge looks an awful lot like Rory Gilmore's.</h4>
+        <iframe src="https://giphy.com/embed/iQVHGumJqSpUY" width="150" height="98" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <select id="q3" class="form-control userSelect">
+            <option value></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <h3>Question 4</h3>
+        <h4>My survival skills would put me solidly in Dwight Schrute's friends group.</h4>
+        <iframe src="https://giphy.com/embed/JXDDEkefvsjx6" width="150" height="104" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <select id="q4" class="form-control userSelect">
+            <option value></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <h3>Question 5</h3>
+        <h4>George Costanza's realism is like the beat of my own heart.</h4>
+        <iframe src="https://giphy.com/embed/j0a8Kr0uDKQec" width="150" height="119" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <select id="q5" class="form-control userSelect">
+            <option value></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <h3>Question 6</h3>
+        <h4>With all of our weird interests, the Janitor and I could definitely hang.</h4>
+        <iframe src="https://giphy.com/embed/FPMsaMchjpave" width="150" height="108" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <select id="q6" class="form-control userSelect">
+            <option value></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <h3>Question 7</h3>
+        <h4>The Fresh Prince and I have one thing in common:</h4>
+        <iframe src="https://giphy.com/embed/HDqF5M1mqv5rW" width="150" height="112" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <select id="q7" class="form-control userSelect">
+            <option value></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <h3>Question 8</h3>
+        <h4>I'd really like to have a rap battle with Leslie Knope.</h4>
+        <iframe src="https://giphy.com/embed/26hitXR6wjeN3F9JK" width="150" height="103" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <select id="q8" class="form-control userSelect">
+            <option value></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <h3>Question 9</h3>
+        <h4>I'm as desperate for drama as Kelly Kapoor</h4>
+        <iframe src="https://giphy.com/embed/IOxeKSBoyhsE8" width="150" height="163" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <select id="q9" class="form-control userSelect">
+            <option value></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <h3>Question 10</h3>
+        <h4>My cleaning skills could make Monica Geller jealous.</h4>
+        <iframe src="https://giphy.com/embed/13WAcAIvNHBpio" width="150" height="143" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <select id="q10" class="form-control userSelect">
+            <option value></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+            Submit
+        </button>
+        <hr>
+
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    <a href="/api/friendslist">API Friends List</a> |
+                    <a href="#">GitHub Repo</a>
+                </p>
+            </div>
+        </footer>
+
+
+        <div id="results-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">x</button>
+                        <h2 class="modal-title">
+                            <strong>Best Match</strong>
+                        </h2>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="match-name"></h2>
+                        <img id="match-img" src="" alt>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
