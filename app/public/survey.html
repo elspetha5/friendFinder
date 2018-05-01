@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Friend Finder</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
         crossorigin="anonymous">
     <style>
@@ -47,7 +49,7 @@
         <h4>Name (Required)</h4>
         <input type="text" id="name" class="form-control" required>
         <h4>Link to Photo Image (Required)</h4>
-        <input type="text" id="photo" class="form-control" required>
+        <input type="text" id="picture" class="form-control" required>
         <hr>
 
         <h3>Question 1</h3>
@@ -177,37 +179,93 @@
         <hr>
 
         <footer class="footer">
-            <div class="container">
-                <p>
-                    <a href="/api/friendslist">API Friends List</a> |
-                    <a href="https://github.com/elspetha5/friendFinder" target="_blank">GitHub Repo</a>
-                </p>
-            </div>
+            <p>
+                <a href="/api/friends">API Friends List</a> |
+                <a href="https://github.com/elspetha5/friendFinder" target="_blank">GitHub Repo</a>
+            </p>
         </footer>
 
+    </div>
 
-        <div id="results-modal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">x</button>
-                        <h2 class="modal-title">
-                            <strong>Best Match</strong>
-                        </h2>
-                    </div>
-                    <div class="modal-body">
-                        <h2 id="match-name"></h2>
-                        <img id="match-img" src="" alt>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Best Match</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2 id="match-name"></h2>
+                    <img id="match-pic" src="" alt>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <script type="text/javascript">
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
 
+            var userData = {
+                name: $("#name").val().trim(),
+                picture: $("#picture").val().trim(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            };
+
+
+            var valid = false;
+
+            if (userData.name) {
+                valid = true;
+            } else if (userData.picture) {
+                valid = true;
+            } else {
+                valid = false;
+            };
+
+            for (var i = 0; i < userData.scores.length; i++) {
+                if (userData.scores[i]) {
+                    valid = true;
+                } else {
+                    valid = false;
+                };
+            };
+
+
+            if (valid) {
+                $.post("/api/friends", userData, function (data) {
+                    $("#match-name").text(data.name);
+                    $("#match-pic").attr("src", data.picture);
+
+                    $("#myModal").modal("toggle");
+
+                    $("#name").val("");
+                    $("#picture").val("");
+                    for (var i = 1; i < 11; i++) {
+                        $("#q" + i).val("");
+                    };
+                });
+            } else {
+                alert("Please fill out all questions before submitting!");
+            };
+        });
+    </script>
 
 
 </body>
