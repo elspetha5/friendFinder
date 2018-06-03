@@ -4,4 +4,4 @@
 
  Link: https://cryptic-harbor-82316.herokuapp.com/
 
- ![Friend Finder](public/images/screenshot.PNG)
+ ![Friend Finder](/app/public/images/screenshot.PNG)
